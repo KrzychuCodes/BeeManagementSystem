@@ -19,11 +19,11 @@
         <Label Content="Assign function" FontSize="18" HorizontalAlignment="Center" Margin="20,0" VerticalAlignment="Bottom"/>
         <StackPanel Grid.Row="1" VerticalAlignment="Top" Margin="20">
             <ComboBox x:Name="jobSelector" FontSize="18" SelectedIndex="0" Margin="0,0,0,20">
-                <ListBoxItem Content="Nextar Collector"></ListBoxItem>
-                <ListBoxItem Content="Honey Mafufacturer"></ListBoxItem>
+                <ListBoxItem Content="Nectar Collector"></ListBoxItem>
+                <ListBoxItem Content="Honey Manufacturer"></ListBoxItem>
                 <ListBoxItem Content="Egg Care"></ListBoxItem>
             </ComboBox>
-            <Button Content="Assign funtction to a bee" FontSize="18px" Click="AssignJob_Click" Margin="20"></Button>
+            <Button Content="Assign function to a bee" FontSize="18px" Click="AssignJob_Click" Margin="20"></Button>
 
         </StackPanel>
 
