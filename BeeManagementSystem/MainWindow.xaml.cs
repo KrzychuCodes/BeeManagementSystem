@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -22,13 +23,21 @@ namespace BeeManagementSystem
     public partial class MainWindow : Window
     {
         private Queen queen = new Queen();
+        private DispatcherTimer timer = new DispatcherTimer();
         public MainWindow()
         {
             InitializeComponent();
             statusReport.Text = queen.StatusReport;
+            timer.Tick += Timer_Tick;
+            timer.Interval = TimeSpan.FromSeconds(1.5);
+            timer.Start();
 
         }
-       
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            WorkShift_Click(this, new RoutedEventArgs());
+        }
 
         private void AssignJob_Click(object sender, RoutedEventArgs e)
         {
@@ -45,7 +54,7 @@ namespace BeeManagementSystem
     }
     static class HoneyVault
     {
-        private static float honey = 25f;
+        private static float honey = 35f;
         private static float nectar = 100f;
         public const float NECTAR_CONVERSION_RATIO = .19f;
         public const float LOW_LEVEL_WARNING = 10f;
